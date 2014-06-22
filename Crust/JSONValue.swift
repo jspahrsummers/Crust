@@ -64,6 +64,40 @@ enum JSONValue {
 		}
 	}
 
+	/// Converts a `JSONValue` into a dynamically-typed Objective-C object (such
+	/// as you might pass into `NSJSONSerialization`).
+	func toObject() -> AnyObject {
+		switch self {
+		case let .object(dict):
+			var duckDictionary = NSMutableDictionary(capacity: dict.count)
+
+			for (key, value) in dict {
+				duckDictionary[key] = value.toObject()
+			}
+
+			return duckDictionary
+
+		case let .array(arr):
+			return arr.map { $0.toObject() }
+
+		case let .string(str):
+			return str
+		
+		case let .number(num):
+			return num
+		
+		case let .boolean(b):
+			if b {
+				return kCFBooleanTrue
+			} else {
+				return kCFBooleanFalse
+			}
+		
+		case let .null:
+			return NSNull()
+		}
+	}
+
 	/// Attempts to parse a `JSONValue` from a data buffer.
 	static func fromData(data: NSData, options: NSJSONReadingOptions = NSJSONReadingOptions()) -> Result<JSONValue> {
 		var error: NSError?
@@ -72,7 +106,7 @@ enum JSONValue {
 		if let obj: AnyObject = maybeObj {
 			return fromObject(obj)
 		} else {
-			return .error(error!)
+			return .error(error)
 		}
 	}
 	
@@ -84,7 +118,31 @@ enum JSONValue {
 		if let obj: AnyObject = maybeObj {
 			return fromObject(obj)
 		} else {
-			return .error(error!)
+			return .error(error)
+		}
+	}
+
+	/// Attempts to serialize the JSON value to a data buffer.
+	func toData(options: NSJSONWritingOptions = NSJSONWritingOptions()) -> Result<NSData> {
+		var error: NSError?
+		let maybeData = NSJSONSerialization.dataWithJSONObject(self.toObject(), options: options, error: &error)
+
+		if let data = maybeData {
+			return .success(Box(data))
+		} else {
+			return .error(error)
+		}
+	}
+
+	/// Attempts to serialize the JSON value, then write it to an output stream.
+	func toStream(stream: NSOutputStream, options: NSJSONWritingOptions = NSJSONWritingOptions()) -> Result<Int> {
+		var error: NSError?
+		let bytes = NSJSONSerialization.writeJSONObject(self.toObject(), toStream: stream, options: options, error: &error)
+
+		if bytes > 0 {
+			return .success(Box(bytes))
+		} else {
+			return .error(error)
 		}
 	}
 }
