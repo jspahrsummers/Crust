@@ -10,6 +10,7 @@
 		D09376421956A49B00566642 /* Crust.h in Headers */ = {isa = PBXBuildFile; fileRef = D09376411956A49B00566642 /* Crust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D09376481956A49B00566642 /* Crust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D093763C1956A49B00566642 /* Crust.framework */; };
 		D093764F1956A49B00566642 /* CrustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093764E1956A49B00566642 /* CrustTests.swift */; };
+		D09376591956A4D000566642 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376581956A4D000566642 /* JSONValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D09376471956A49B00566642 /* CrustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D093764D1956A49B00566642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D093764E1956A49B00566642 /* CrustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrustTests.swift; sourceTree = "<group>"; };
+		D09376581956A4D000566642 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D09376411956A49B00566642 /* Crust.h */,
+				D09376581956A4D000566642 /* JSONValue.swift */,
 				D093763F1956A49B00566642 /* Supporting Files */,
 			);
 			path = Crust;
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09376591956A4D000566642 /* JSONValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +320,7 @@
 		D09376531956A49B00566642 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,12 +332,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D09376541956A49B00566642 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -400,6 +407,7 @@
 				D09376541956A49B00566642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D09376551956A49B00566642 /* Build configuration list for PBXNativeTarget "CrustTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +416,7 @@
 				D09376571956A49B00566642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
