@@ -14,6 +14,7 @@
 		D093765B1956A5A100566642 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765A1956A5A100566642 /* FromJSON.swift */; };
 		D093765D1956A5F800566642 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765C1956A5F800566642 /* Result.swift */; };
 		D093765F1956A62600566642 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765E1956A62600566642 /* Box.swift */; };
+		D09376611956A69E00566642 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376601956A69E00566642 /* ToJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		D093765A1956A5A100566642 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
 		D093765C1956A5F800566642 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D093765E1956A62600566642 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		D09376601956A69E00566642 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D093765A1956A5A100566642 /* FromJSON.swift */,
 				D09376581956A4D000566642 /* JSONValue.swift */,
 				D093765C1956A5F800566642 /* Result.swift */,
+				D09376601956A69E00566642 /* ToJSON.swift */,
 				D093763F1956A49B00566642 /* Supporting Files */,
 			);
 			path = Crust;
@@ -225,6 +228,7 @@
 				D093765D1956A5F800566642 /* Result.swift in Sources */,
 				D093765F1956A62600566642 /* Box.swift in Sources */,
 				D09376591956A4D000566642 /* JSONValue.swift in Sources */,
+				D09376611956A69E00566642 /* ToJSON.swift in Sources */,
 				D093765B1956A5A100566642 /* FromJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
