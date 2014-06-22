@@ -50,6 +50,10 @@ enum JSONValue {
 			return .success(Box(array(verifiedArray)))
 		} else if let s = obj as? String {
 			return .success(Box(string(s)))
+		} else if obj === kCFBooleanTrue {
+			return .success(Box(boolean(true)))
+		} else if obj === kCFBooleanFalse {
+			return .success(Box(boolean(false)))
 		} else if let n = obj as? NSNumber {
 			return .success(Box(number(n)))
 		} else if obj is NSNull {
