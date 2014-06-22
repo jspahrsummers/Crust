@@ -16,6 +16,7 @@
 		D093765F1956A62600566642 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765E1956A62600566642 /* Box.swift */; };
 		D09376611956A69E00566642 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376601956A69E00566642 /* ToJSON.swift */; };
 		D09376641956B6B500566642 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376631956B6B500566642 /* Property.swift */; };
+		D09DD5961956C28B00CDC028 /* TypeEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DD5951956C28B00CDC028 /* TypeEquality.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		D093765E1956A62600566642 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		D09376601956A69E00566642 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
 		D09376631956B6B500566642 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		D09DD5941956BBE300CDC028 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		D09DD5951956C28B00CDC028 /* TypeEquality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEquality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +93,9 @@
 				D09376631956B6B500566642 /* Property.swift */,
 				D093765C1956A5F800566642 /* Result.swift */,
 				D09376601956A69E00566642 /* ToJSON.swift */,
+				D09DD5951956C28B00CDC028 /* TypeEquality.swift */,
 				D093763F1956A49B00566642 /* Supporting Files */,
+				D09DD5941956BBE300CDC028 /* MyPlayground.playground */,
 			);
 			path = Crust;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09376641956B6B500566642 /* Property.swift in Sources */,
+				D09DD5961956C28B00CDC028 /* TypeEquality.swift in Sources */,
 				D093765D1956A5F800566642 /* Result.swift in Sources */,
 				D093765F1956A62600566642 /* Box.swift in Sources */,
 				D09376591956A4D000566642 /* JSONValue.swift in Sources */,
