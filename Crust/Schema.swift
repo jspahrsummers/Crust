@@ -60,8 +60,12 @@ struct PropertyOf<T, O>: Property {
 	}
 }
 
-struct TestModel: Introspectable {
-	static let schema = SchemaOf<TestModel>([
-		PropertyOf<String, TestModel>
-	])
+func propertyOf<O, T>(#read: O -> T, #write: (T, O) -> ()) -> PropertyOf<T, O> {
+	return PropertyOf(read: read, write: write)
+}
+
+struct TestModel {
+	var name: String
+
+	let nameProperty = propertyOf(read: { $0.name }, write: { $0.name = $1 })
 }
