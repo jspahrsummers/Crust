@@ -8,69 +8,47 @@
 
 import Foundation
 
-struct ConstructedProperty<T> {
-	var value: T? = nil
-}
-
 protocol Property {
 	typealias Value
-
-	var name: String { get }
-	func construct() -> ConstructedProperty<Value>
 }
 
-struct PropertyOf<T>: Property {
-	typealias Value = T
-	let name: String
+class LeafProperty<P: Property, > {
+	let type: Any.Type = P.Value
+}
 
-	init(_ name: String) {
-		self.name = name
-	}
+class ChainedProperty<P: Property, N>: LeafProperty<P> {
+	let nextProperty: P
 
-	func construct() -> ConstructedProperty<T> {
-		return ConstructedProperty()
+	init(_ nextProperty: P) {
+		self.nextProperty = nextProperty
+		super.init()
 	}
 }
 
-func construct<A>(properties: (PropertyOf<A>)) -> (ConstructedProperty<A>) {
-	return (properties.0.construct())
+func propertiesOf<A>(names: (A)) -> LeafProperty<A> {
+	return LeafProperty()
 }
 
-func construct<A, B>(properties: (PropertyOf<A>, PropertyOf<B>)) -> (ConstructedProperty<A>, ConstructedProperty<B>) {
-	return (properties.0.construct(), properties.1.construct())
-}
-
-func collect<A>(properties: (PropertyOf<A>)) -> Property[] {
-	return [properties.0]
-}
-
-func collect<A, B>(properties: (PropertyOf<A>, PropertyOf<B>)) -> Property[] {
-	return [properties.0, properties.1]
+func propertiesOf<A, B>(names: (String, String)) -> ChainedProperty<A, LeafProperty<B>> {
+	return ChainedProperty(names.0, nextProperty: LeafProperty(names.1))
 }
 
 struct TestModel {
+	static let name = PropertyOf<String>
+
+	typealias 
+
+	var name: String
+	var createdAt: NSDate
+
 	static let properties = (
-		PropertyOf<String>("name"),
-		PropertyOf<NSDate>("createdAt")
+		TestModel.self.name
 	)
-
-	static func propertyNames() -> String[] {
-		return collect(properties).map { $0.name }
-	}
-
-	var properties = construct(TestModel.properties)
-
-	/*
-	mutating func setValue<EV: TypeEquality where EV.From == Property, EV.To == name>(value: String, _ ev: EV) {
-		_name.value = value
-	}
-
-	mutating func setValue<createdAt>(value: NSDate) {
-		_createdAt.value = value
-	}
-
-	func getProperties() -> TypeEquality[] {
-		return [ PropertyRefl<name>(), PropertyRefl<createdAt>() ]
-	}
-	*/
 }
+
+/*
+func doThings() -> TestModel? {
+	"foo" is TestModel.name.property.type
+	return nil
+}
+*/
