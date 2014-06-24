@@ -18,7 +18,6 @@
 		D093765D1956A5F800566642 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765C1956A5F800566642 /* Result.swift */; };
 		D093765F1956A62600566642 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765E1956A62600566642 /* Box.swift */; };
 		D09376611956A69E00566642 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376601956A69E00566642 /* ToJSON.swift */; };
-		D09DD5961956C28B00CDC028 /* TypeEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DD5951956C28B00CDC028 /* TypeEquality.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		D093765C1956A5F800566642 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D093765E1956A62600566642 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		D09376601956A69E00566642 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
-		D09DD5951956C28B00CDC028 /* TypeEquality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEquality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 				D093765C1956A5F800566642 /* Result.swift */,
 				D011A63A195952F10035F2BD /* TestModel.swift */,
 				D09376601956A69E00566642 /* ToJSON.swift */,
-				D09DD5951956C28B00CDC028 /* TypeEquality.swift */,
 				D093763F1956A49B00566642 /* Supporting Files */,
 			);
 			path = Crust;
@@ -239,7 +236,6 @@
 			files = (
 				D011A639195948A10035F2BD /* Model.swift in Sources */,
 				D011A63D195953680035F2BD /* JSONAdapter.swift in Sources */,
-				D09DD5961956C28B00CDC028 /* TypeEquality.swift in Sources */,
 				D093765D1956A5F800566642 /* Result.swift in Sources */,
 				D011A63B195952F10035F2BD /* TestModel.swift in Sources */,
 				D093765F1956A62600566642 /* Box.swift in Sources */,
