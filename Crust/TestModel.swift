@@ -8,41 +8,26 @@
 
 import Foundation
 
-protocol Property {
-	class func type() -> Any.Type
-}
-
-class PropertyOf<T>: Property {
-	var _closure: () -> T
-
-	var value: T {
-		get {
-			return _closure()
-		}
-
-		set(newValue) {
-			_closure = { newValue }
-		}
-	}
-
-	init(_ value: T) {
-		_closure = { value }
-	}
-
-	@conversion
-	func __conversion() -> T {
-		return _closure()
-	}
-
-	class func type() -> Any.Type {
-		return T.self
-	}
-}
-
 struct TestModel {
-	typealias name = PropertyOf<String>
+	static let name = PropertyOf<String>("name")
+	static let properties = (name)
 
-	var _name: name
+	var _propertyStorage = Dictionary<String, Any>()
 
-	static let properties = (name.self.type())
+	func getProperty<T, P: Property where P.Value == T>(property: P) -> T? {
+		assert(contains(_propertyArray(TestModel.properties), PropertyOf(property)))
+
+		return _propertyStorage[property.key] as T?
+	}
+
+	mutating func setProperty<T, P: Property where P.Value == T>(property: P, toValue: T) {
+		assert(contains(_propertyArray(TestModel.properties), PropertyOf(property)))
+
+		_propertyStorage[property.key] = toValue
+	}
+
+	mutating func testThings() {
+		getProperty(TestModel.name)
+		setProperty(TestModel.name, toValue: "foobar")
+	}
 }

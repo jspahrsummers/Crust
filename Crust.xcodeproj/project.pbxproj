@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D011A633195940E80035F2BD /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376631956B6B500566642 /* Property.swift */; };
 		D017027C195808DA00050C60 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017027B195808DA00050C60 /* TestModel.swift */; };
 		D09376421956A49B00566642 /* Crust.h in Headers */ = {isa = PBXBuildFile; fileRef = D09376411956A49B00566642 /* Crust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D09376481956A49B00566642 /* Crust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D093763C1956A49B00566642 /* Crust.framework */; };
@@ -30,7 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D01702791958045000050C60 /* Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		D017027B195808DA00050C60 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		D093763C1956A49B00566642 /* Crust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Crust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09376401956A49B00566642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +94,6 @@
 				D09376581956A4D000566642 /* JSONValue.swift */,
 				D09376631956B6B500566642 /* Property.swift */,
 				D093765C1956A5F800566642 /* Result.swift */,
-				D01702791958045000050C60 /* Schema.swift */,
 				D017027B195808DA00050C60 /* TestModel.swift */,
 				D09376601956A69E00566642 /* ToJSON.swift */,
 				D09DD5951956C28B00CDC028 /* TypeEquality.swift */,
@@ -243,6 +242,7 @@
 				D017027C195808DA00050C60 /* TestModel.swift in Sources */,
 				D09376591956A4D000566642 /* JSONValue.swift in Sources */,
 				D09376611956A69E00566642 /* ToJSON.swift in Sources */,
+				D011A633195940E80035F2BD /* Property.swift in Sources */,
 				D093765B1956A5A100566642 /* FromJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
