@@ -93,24 +93,3 @@ func clearProperty<M: Model>(inout model: M, property: PropertyDescription) {
 
 	model.properties.removeValueForKey(property.key)
 }
-
-struct TestModel: Model {
-	static let name = PropertyOf<String>("name")
-	static let createdAt = PropertyOf<NSDate>("createdAt")
-
-	static func describe() -> PropertyDescription[] {
-		return [name, createdAt]
-	}
-
-	var properties: PropertyStorage
-
-	mutating func testThings() {
-		getProperty(self, TestModel.name)
-		setProperty(&self, TestModel.name, "foobar")
-	}
-}
-
-@infix
-func ==(lhs: TestModel, rhs: TestModel) -> Bool {
-	return lhs.properties == rhs.properties
-}
