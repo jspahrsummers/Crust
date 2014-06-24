@@ -10,7 +10,8 @@ import Foundation
 
 struct TestModel {
 	static let name = PropertyOf<String>("name")
-	static let properties = (name)
+	static let createdAt = PropertyOf<NSDate>("createdAt")
+	static let properties = (name, createdAt)
 
 	var _propertyStorage = Dictionary<String, Any>()
 
