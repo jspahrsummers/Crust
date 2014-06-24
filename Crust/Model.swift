@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol Model {
+protocol Model: Equatable {
 	class func properties() -> Property[]
-	var _propertyStorage: Dictionary<String, Any> { get set }
+	var _propertyStorage: Dictionary<String, protocol<Equatable>> { get set }
 }
 
 func getProperty<M: Model, T, P: Property where P.Value == T>(model: M, property: P) -> T? {
@@ -19,7 +19,7 @@ func getProperty<M: Model, T, P: Property where P.Value == T>(model: M, property
 	return model._propertyStorage[property.key] as T?
 }
 
-func setProperty<M: Model, T, P: Property where P.Value == T>(inout model: M, property: P, toValue: T) {
+func setProperty<M: Model, T: Equatable, P: Property where P.Value == T>(inout model: M, property: P, toValue: T) {
 	assert(contains(_reify(model.dynamicType.properties()), PropertyOf(property)))
 
 	model._propertyStorage[property.key] = toValue
@@ -33,10 +33,15 @@ struct TestModel: Model {
 		return [name, createdAt]
 	}
 
-	var _propertyStorage = Dictionary<String, Any>()
+	var _propertyStorage = Dictionary<String, protocol<Equatable>>()
 
 	mutating func testThings() {
 		getProperty(self, TestModel.name)
 		setProperty(&self, TestModel.name, "foobar")
 	}
+}
+
+@infix
+func ==(lhs: TestModel, rhs: TestModel) -> Bool {
+	return lhs._propertyStorage == rhs._propertyStorage
 }
