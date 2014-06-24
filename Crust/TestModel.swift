@@ -16,13 +16,13 @@ struct TestModel {
 	var _propertyStorage = Dictionary<String, Any>()
 
 	func getProperty<T, P: Property where P.Value == T>(property: P) -> T? {
-		assert(contains(_propertyArray(TestModel.properties), PropertyOf(property)))
+		assert(contains(_propertyArray(self.dynamicType.properties), PropertyOf(property)))
 
 		return _propertyStorage[property.key] as T?
 	}
 
 	mutating func setProperty<T, P: Property where P.Value == T>(property: P, toValue: T) {
-		assert(contains(_propertyArray(TestModel.properties), PropertyOf(property)))
+		assert(contains(_propertyArray(self.dynamicType.properties), PropertyOf(property)))
 
 		_propertyStorage[property.key] = toValue
 	}
