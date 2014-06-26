@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a JSON value.
-enum JSONValue {
+enum JSONValue: Equatable {
 	case object(Dictionary<String, JSONValue>)
 	case array(Array<JSONValue>)
 	case string(String)
@@ -144,5 +144,65 @@ enum JSONValue {
 		} else {
 			return .error(error)
 		}
+	}
+}
+
+@infix
+func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
+	switch lhs {
+	case let .object(left):
+		switch rhs {
+		case let .object(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .array(left):
+		switch rhs {
+		case let .array(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .string(left):
+		switch rhs {
+		case let .string(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .number(left):
+		switch rhs {
+		case let .number(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .boolean(left):
+		switch rhs {
+		case let .boolean(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .null:
+		switch rhs {
+		case let .null:
+			return true
+
+		default:
+			return false
+		}
+
 	}
 }
