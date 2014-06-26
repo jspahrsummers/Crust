@@ -9,13 +9,37 @@
 import Foundation
 
 /// Represents a JSON value.
-enum JSONValue {
+enum JSONValue: Equatable, Hashable {
 	case object(Dictionary<String, JSONValue>)
 	case array(Array<JSONValue>)
 	case string(String)
 	case number(NSNumber)
 	case boolean(Bool)
 	case null
+
+	var hashValue: Int {
+		get {
+			switch self {
+			case let .object(dict):
+				return dict.count.hashValue
+
+			case let .array(arr):
+				return arr.count.hashValue
+
+			case let .string(str):
+				return str.hashValue
+
+			case let .number(num):
+				return num.hashValue
+
+			case let .boolean(b):
+				return b.hashValue
+
+			case let .null:
+				return 0
+			}
+		}
+	}
 
 	/// Converts a dynamically-typed Objective-C object (such as you might get
 	/// back from `NSJSONSerialization`) into a `JSONValue`.
@@ -144,5 +168,65 @@ enum JSONValue {
 		} else {
 			return .error(error)
 		}
+	}
+}
+
+@infix
+func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
+	switch lhs {
+	case let .object(left):
+		switch rhs {
+		case let .object(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .array(left):
+		switch rhs {
+		case let .array(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .string(left):
+		switch rhs {
+		case let .string(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .number(left):
+		switch rhs {
+		case let .number(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .boolean(left):
+		switch rhs {
+		case let .boolean(right):
+			return left == right
+
+		default:
+			return false
+		}
+
+	case let .null:
+		switch rhs {
+		case let .null:
+			return true
+
+		default:
+			return false
+		}
+
 	}
 }
