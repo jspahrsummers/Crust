@@ -9,13 +9,37 @@
 import Foundation
 
 /// Represents a JSON value.
-enum JSONValue: Equatable {
+enum JSONValue: Equatable, Hashable {
 	case object(Dictionary<String, JSONValue>)
 	case array(Array<JSONValue>)
 	case string(String)
 	case number(NSNumber)
 	case boolean(Bool)
 	case null
+
+	var hashValue: Int {
+		get {
+			switch self {
+			case let .object(dict):
+				return dict.count.hashValue
+
+			case let .array(arr):
+				return arr.count.hashValue
+
+			case let .string(str):
+				return str.hashValue
+
+			case let .number(num):
+				return num.hashValue
+
+			case let .boolean(b):
+				return b.hashValue
+
+			case let .null:
+				return 0
+			}
+		}
+	}
 
 	/// Converts a dynamically-typed Objective-C object (such as you might get
 	/// back from `NSJSONSerialization`) into a `JSONValue`.
