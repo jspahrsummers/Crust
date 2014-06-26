@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D011A639195948A10035F2BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A638195948A10035F2BD /* Model.swift */; };
 		D011A63B195952F10035F2BD /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A63A195952F10035F2BD /* TestModel.swift */; };
-		D011A63D195953680035F2BD /* JSONAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A63C195953680035F2BD /* JSONAdapter.swift */; };
 		D09376421956A49B00566642 /* Crust.h in Headers */ = {isa = PBXBuildFile; fileRef = D09376411956A49B00566642 /* Crust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D09376481956A49B00566642 /* Crust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D093763C1956A49B00566642 /* Crust.framework */; };
 		D093764F1956A49B00566642 /* CrustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093764E1956A49B00566642 /* CrustTests.swift */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		D011A638195948A10035F2BD /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D011A63A195952F10035F2BD /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
-		D011A63C195953680035F2BD /* JSONAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAdapter.swift; sourceTree = "<group>"; };
 		D093763C1956A49B00566642 /* Crust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Crust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09376401956A49B00566642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D09376411956A49B00566642 /* Crust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crust.h; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				D09376411956A49B00566642 /* Crust.h */,
 				D093765E1956A62600566642 /* Box.swift */,
 				D093765A1956A5A100566642 /* FromJSON.swift */,
-				D011A63C195953680035F2BD /* JSONAdapter.swift */,
 				D09376581956A4D000566642 /* JSONValue.swift */,
 				D011A638195948A10035F2BD /* Model.swift */,
 				D093765C1956A5F800566642 /* Result.swift */,
@@ -235,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D011A639195948A10035F2BD /* Model.swift in Sources */,
-				D011A63D195953680035F2BD /* JSONAdapter.swift in Sources */,
 				D093765D1956A5F800566642 /* Result.swift in Sources */,
 				D011A63B195952F10035F2BD /* TestModel.swift in Sources */,
 				D093765F1956A62600566642 /* Box.swift in Sources */,
