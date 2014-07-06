@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D016B52A1968ED4800B74FB1"
-               BuildableName = "Crust-iOS.framework"
+               BuildableName = "Crust.framework"
                BlueprintName = "Crust-iOS"
                ReferencedContainer = "container:Crust.xcodeproj">
             </BuildableReference>

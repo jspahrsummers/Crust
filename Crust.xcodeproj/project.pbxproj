@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D011A639195948A10035F2BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A638195948A10035F2BD /* Model.swift */; };
 		D011A63B195952F10035F2BD /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011A63A195952F10035F2BD /* TestModel.swift */; };
-		D016B5361968ED4900B74FB1 /* Crust-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016B52B1968ED4800B74FB1 /* Crust-iOS.framework */; };
+		D016B5361968ED4900B74FB1 /* Crust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D016B52B1968ED4800B74FB1 /* Crust.framework */; };
 		D016B5481968EDA100B74FB1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765E1956A62600566642 /* Box.swift */; };
 		D016B5491968EDA100B74FB1 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093765A1956A5A100566642 /* FromJSON.swift */; };
 		D016B54A1968EDA100B74FB1 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09376581956A4D000566642 /* JSONValue.swift */; };
@@ -94,7 +94,7 @@
 		D016B51F1968ECAC00B74FB1 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D016B5201968ECAC00B74FB1 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D016B5211968ECAC00B74FB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D016B52B1968ED4800B74FB1 /* Crust-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Crust-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D016B52B1968ED4800B74FB1 /* Crust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Crust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D016B5351968ED4900B74FB1 /* Crust-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crust-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D093763C1956A49B00566642 /* Crust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Crust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09376401956A49B00566642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D016B5361968ED4900B74FB1 /* Crust-iOS.framework in Frameworks */,
+				D016B5361968ED4900B74FB1 /* Crust.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +224,7 @@
 			children = (
 				D093763C1956A49B00566642 /* Crust.framework */,
 				D09376471956A49B00566642 /* CrustTests.xctest */,
-				D016B52B1968ED4800B74FB1 /* Crust-iOS.framework */,
+				D016B52B1968ED4800B74FB1 /* Crust.framework */,
 				D016B5351968ED4900B74FB1 /* Crust-iOSTests.xctest */,
 			);
 			name = Products;
@@ -308,7 +308,7 @@
 			);
 			name = "Crust-iOS";
 			productName = Crust;
-			productReference = D016B52B1968ED4800B74FB1 /* Crust-iOS.framework */;
+			productReference = D016B52B1968ED4800B74FB1 /* Crust.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D016B5341968ED4900B74FB1 /* Crust-iOSTests */ = {
@@ -544,10 +544,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -568,8 +566,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Crust;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -593,11 +590,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
@@ -611,8 +605,7 @@
 				INFOPLIST_FILE = Crust/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Crust;
 			};
 			name = Release;
 		};
@@ -681,7 +674,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
