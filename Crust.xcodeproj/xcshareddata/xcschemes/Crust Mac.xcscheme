@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D093763B1956A49B00566642"
                BuildableName = "Crust.framework"
-               BlueprintName = "Crust"
+               BlueprintName = "Crust-Mac"
                ReferencedContainer = "container:Crust.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D09376461956A49B00566642"
-               BuildableName = "CrustTests.xctest"
-               BlueprintName = "CrustTests"
+               BuildableName = "Crust-MacTests.xctest"
+               BlueprintName = "Crust-MacTests"
                ReferencedContainer = "container:Crust.xcodeproj">
             </BuildableReference>
          </TestableReference>
