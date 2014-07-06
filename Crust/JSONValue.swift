@@ -41,6 +41,16 @@ enum JSONValue: Equatable, Hashable {
 		}
 	}
 
+	subscript(key: String) -> JSONValue? {
+		switch self {
+		case let .object(dict):
+			return dict[key]
+
+		default:
+			return nil
+		}
+	}
+
 	/// Converts a dynamically-typed Objective-C object (such as you might get
 	/// back from `NSJSONSerialization`) into a `JSONValue`.
 	static func fromObject(obj: AnyObject) -> Result<JSONValue> {
